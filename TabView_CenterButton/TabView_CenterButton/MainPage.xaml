@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TabView_CenterButton"
+             x:Class="TabView_CenterButton.MainPage"
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms">
+
+    <ContentPage.Content>
+        <Grid>
+            <tabView:SfTabView OverflowMode="CenterButton"
+                               x:Name="tabView"
+                               TabHeight="80"
+                               CenterButtonTapped="TabView_CenterButtonTapped">
+                <tabView:SfTabView.CenterButtonSettings>
+                    <tabView:CenterButtonSettings  Height="80" Width="100"
+                                                   Title="CenterButton" TitleFontColor="Green"
+                                                   BackgroundColor="LightGray">
+                    </tabView:CenterButtonSettings>
+                </tabView:SfTabView.CenterButtonSettings>
+                <tabView:SfTabView.CenterButtonView>
+                    <Grid>
+                        <Image Source="Compose.png"
+                               Aspect="AspectFill"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </tabView:SfTabView.CenterButtonView>
+                <tabView:SfTabItem Title="Call">
+                    <tabView:SfTabItem.Content>
+                        <Grid BackgroundColor="LightGray" x:Name="AllContactsGrid" >
+                            <ListView x:Name="ContactListView" 
+                                  ItemsSource="{Binding ContactList}"
+                                  RowHeight="75">
+                                <ListView.BindingContext>
+                                    <local:ContactsViewModel />
+                                </ListView.BindingContext>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" Margin="30,0,0,0">
+                                                <Label 
+                                                    Text="{Binding Name}"
+                                                    FontSize="24" />
+                                                <Label
+                                                    Text="{Binding Number}" 
+                                                    FontSize="20" 
+                                                    TextColor="LightSlateGray" />
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <tabView:SfTabItem Title="Favorites">
+                    <tabView:SfTabItem.Content>
+                        <Grid BackgroundColor="LightCyan" x:Name="FavoritesGrid" />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+            </tabView:SfTabView>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>
