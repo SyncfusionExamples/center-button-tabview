@@ -8,7 +8,7 @@ TabView user guide documentation: https://help.syncfusion.com/xamarin/tabbed-vie
 ## Creating the project
 Create a new BlankApp (Xamarin.Forms.Portable) application in Xamarin Studio or Visual Studio for Xamarin.Forms.
 
-## Adding SfTabView in Xamarin.Forms
+### Adding SfTabView in Xamarin.Forms
 Add the required assembly references to the PCL and renderer projects as discussed in the Assembly deployment section.
 
 Import the control namespace as shown in the following code.
@@ -38,7 +38,7 @@ public MainPage()
     this.Content = tabView;  
 }  
 ```
-# CenterButton Customization in Xamarin Tabbed View (SfTabView)
+## CenterButton Customization in Xamarin Tabbed View (SfTabView)
 To enable CenterButton, set the OverFlowMode of Xamarin.Forms SfTabView to CenterButton.
 
 **[XAML]**
@@ -47,7 +47,7 @@ To enable CenterButton, set the OverFlowMode of Xamarin.Forms SfTabView to Cente
                    x:Name="tabView">
 </tabView:SfTabView>
 ```
-# Customize CenterButtonSettings
+## Customize CenterButtonSettings
 We can customize the CenterButton using the properties of CenterButtonSetting. The following properties are used to customize the view of CenterButton BackgroundColor, BorderColor, BorderThickness, Height, Title, TitleFontAttributes, TitleFontColor, TitleFontSize, Width.
 **[XAML]**
 ```
@@ -58,7 +58,7 @@ We can customize the CenterButton using the properties of CenterButtonSetting. T
     </tabView:CenterButtonSettings>
 </tabView:SfTabView.CenterButtonSettings>
 ```
-# CenterButtonTapped event
+## CenterButtonTapped event
 When CenterButton is tapped, the CenterButtonTapped event occurs. Using this event we can set alert message.
 
 **[XAML]**
@@ -66,7 +66,7 @@ When CenterButton is tapped, the CenterButtonTapped event occurs. Using this eve
 <tabView:SfTabView CenterButtonTapped="TabView_CenterButtonTapped">
 </tabView:SfTabView>
 ```
-# Custom CenterButton
+## Custom CenterButton
 When built-in view is not needed, it can be overridden by adding custom views to the CenterButtonView. The CenterButton view can be customized by adding images, labels, buttons inside the CenterButtonView. Refer the following code sample to know about customizing the view of CenterButton.
 
 **[XAML]**
